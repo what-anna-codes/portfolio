@@ -1,9 +1,10 @@
 import { useLanguage } from "@/app/context/LanguageContext";
 import { about_en, about_pl } from "@/app/data/about";
-import { useState } from "react";
 import { Section } from "../../ui/Section/Section";
 import { SectionHeader } from "../../ui/SectionHeader/SectionHeader";
 import { TextBlock } from "../../ui/TextBlock/TextBlock";
+import BookCarousel from "./BookCarousel/BookCarousel";
+import { books } from "../../../data/books";
 
 export const AboutSection = () => {
   const { language } = useLanguage();
@@ -12,11 +13,12 @@ export const AboutSection = () => {
     <Section>
       <SectionHeader content={isEnglish ? about_en.title : about_pl.title} />
       <TextBlock
-        width="w-[80%]"
+        classNames="w-[90%] px-12 text-justify text-pretty"
         content={isEnglish ? about_en.intro : about_pl.intro}
       />
+      <BookCarousel books={books} />
       <TextBlock
-        width="w-[80%]"
+        classNames="w-[90%] px-12 text-justify text-pretty"
         content={isEnglish ? about_en.outro : about_pl.outro}
       />
     </Section>
