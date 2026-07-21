@@ -1,0 +1,7 @@
+.language-switch {
+  position: absolute;
+  top: 4rem;
+  right: 1rem;
+  z-index: 10;
+  width: fit-content;
+}
