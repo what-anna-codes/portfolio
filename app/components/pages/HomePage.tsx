@@ -1,6 +1,7 @@
 "use client";
 import { AboutSection } from "../sections/about/AboutSection";
 import { StartSection } from "../sections/start/StartSection";
+import { ToolsSection } from "../sections/tools/ToolsSection";
 import LanguageSwitch from "../ui/LanguageSwitch/LanguageSwitch";
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
       <main className="relative flex max-w-3xl flex-col items-center justify-center py-32 bg-white sm:items-start">
         <LanguageSwitch />
         <StartSection />
+        <ToolsSection />
         <AboutSection />
       </main>
     </div>
