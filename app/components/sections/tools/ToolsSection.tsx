@@ -21,8 +21,8 @@ export const ToolsSection = () => {
   if (!categories.length) return null;
 
   return (
-    <Section classNames="section-skills" id="tools">
-      <SectionHeader content={tools_ui.title} classNames={"text-center"} />
+    <Section classNames="section-skills pb-12" bg="bg-mauve-300/80" id="tools">
+      <SectionHeader content={tools_ui.title} classNames="text-center pb-12" />
       <div className="skills__switch">
         <Switch
           classNames="btn-frame-long max-w-fit"

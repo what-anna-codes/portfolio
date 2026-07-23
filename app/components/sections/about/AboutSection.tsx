@@ -10,15 +10,18 @@ export const AboutSection = () => {
   const { language } = useLanguage();
   const isEnglish = language === "en";
   return (
-    <Section>
-      <SectionHeader content={isEnglish ? about_en.title : about_pl.title} />
+    <Section id="about" bg="bg-mauve-50" classNames="pb-12">
+      <SectionHeader
+        classNames="pb-12 text-center"
+        content={isEnglish ? about_en.title : about_pl.title}
+      />
       <TextBlock
-        classNames="w-[90%] px-12 text-justify text-pretty"
+        classNames="w-full px-24 text-justify text-pretty"
         content={isEnglish ? about_en.intro : about_pl.intro}
       />
       <BookCarousel books={books} />
       <TextBlock
-        classNames="w-[90%] px-12 text-justify text-pretty"
+        classNames="w-full px-24 text-justify text-pretty"
         content={isEnglish ? about_en.outro : about_pl.outro}
       />
     </Section>

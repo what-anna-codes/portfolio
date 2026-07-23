@@ -14,8 +14,8 @@ export const Section = ({
   return (
     <div
       id={id}
-      className={`${bg || "bg-mauve-50"} flex flex-col flex-1 pb-12 pt-12 w-3xl
-      border-t-2 border-b-2 border-mauve-300 ${classNames}`}>
+      className={`${bg || "bg-mauve-50"} my-8 flex flex-col justify-between shadow-2xl w-full grow flex-1 pb-0 pt-12 max-w-5xl
+      border-t border-b border-mauve-900/20 ${classNames}`}>
       {children}
     </div>
   );
