@@ -1,21 +1,21 @@
+import { Carousel } from "@/app/components/ui/Carousel/Carousel";
 import { BookCard } from "../BookCard/BookCard";
 import { Book } from "../BookCard/BookCardTypes";
+import "./BookCarousel.css";
+import { CarouselItem } from "@/app/components/ui/Carousel/CarouselTypes";
 
 export default function BookCarousel({ books }: { books: Book[] }) {
   return (
-    <div className="w-full max-w-5xl max-h-80 mx-auto px-4 py-12">
-      <div className="flex gap-6 overflow-x-scroll pb-6 scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+    <div className="book-carousel overflow-hidden w-full pt-8 pb-24 px-0 max-w-5xl mx-auto">
+      <Carousel
+        activeId={books[1]?.id}
+        items={books as unknown as CarouselItem[]}>
         {books.map((book, index) => (
-          <div key={index} className="snap-center">
-            <BookCard
-              filename={book.filename}
-              title={book.title}
-              author={book.author}
-              quote={book.quote}
-            />
+          <div key={index} className="embla__slide">
+            <BookCard book={book} />
           </div>
         ))}
-      </div>
+      </Carousel>
     </div>
   );
 }

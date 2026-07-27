@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.book-carousel {
+  & .embla__container {
+    max-width: 100%;
+  }
+
+  & .embla__slide {
+    max-width: 170px;
+  }
+
+  & .embla__buttons {
+    bottom: -5.5rem;
+  }
+}
