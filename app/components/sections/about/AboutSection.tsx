@@ -8,22 +8,20 @@ import { books } from "../../../data/books";
 
 export const AboutSection = () => {
   const { language } = useLanguage();
-  const isEnglish = language === "en";
+
+  const { title, intro, outro } = language === "en" ? about_en : about_pl;
   return (
-    <Section id="about" bg="bg-mauve-50" classNames="pb-12">
+    <Section
+      id="about"
+      bg="bg-mauve-200/50"
+      classNames="p-12 md:p-24 text-[17px] text-pretty font-sans flex flex-col items-center w-screen max-w-screen">
       <SectionHeader
-        classNames="pb-12 text-center"
-        content={isEnglish ? about_en.title : about_pl.title}
+        classNames="text-center p-0 m-0 pb-12 w-full"
+        content={title}
       />
-      <TextBlock
-        classNames="w-full px-24 text-justify text-pretty"
-        content={isEnglish ? about_en.intro : about_pl.intro}
-      />
+      <TextBlock classNames="p-0! text-justify" content={intro} />
       <BookCarousel books={books} />
-      <TextBlock
-        classNames="w-full px-24 text-justify text-pretty"
-        content={isEnglish ? about_en.outro : about_pl.outro}
-      />
+      <TextBlock classNames="p-0! text-justify" content={outro} />
     </Section>
   );
 };
