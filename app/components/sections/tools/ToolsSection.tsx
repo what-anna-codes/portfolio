@@ -1,9 +1,8 @@
-import { motion } from "motion/react";
 import { useState } from "react";
 import { useLanguage } from "../../../context/LanguageContext";
 import "./ToolsSection.css";
 import {
-  MAIN_SKILLS_END,
+  MAIN_TOOLS_END,
   tools_data,
   tools_ui_en,
   tools_ui_pl,
@@ -11,6 +10,7 @@ import {
 import Switch from "../../ui/Switch/Switch";
 import { SectionHeader } from "../../ui/SectionHeader/SectionHeader";
 import { Section } from "../../ui/Section/Section";
+import { Tool } from "./Tool/Tool";
 
 export const ToolsSection = () => {
   const { language } = useLanguage();
@@ -21,9 +21,12 @@ export const ToolsSection = () => {
   if (!categories.length) return null;
 
   return (
-    <Section classNames="section-skills pb-12" bg="bg-mauve-300/80" id="tools">
-      <SectionHeader content={tools_ui.title} classNames="text-center pb-12" />
-      <div className="skills__switch">
+    <Section bg="bg-transparent" classNames="section-tools pb-12" id="tools">
+      <SectionHeader
+        content={tools_ui.title}
+        classNames="text-6xl text-center pb-16"
+      />
+      <div className="tools__switch">
         <Switch
           classNames="btn-frame-long max-w-fit"
           selected={showMore}
@@ -31,37 +34,28 @@ export const ToolsSection = () => {
           select={setShowMore}
         />
       </div>
-      <div className="skills__categories w-fit flex justify-center grow-0">
-        {categories.map((category, i) => {
-          const separatorIndex = tools_data[category].indexOf(MAIN_SKILLS_END);
-          const skills = tools_data[category].filter(
-            (_, i) => i !== separatorIndex,
-          );
+      <div className="tools__categories h-fit min-h-0 w-fit flex justify-center">
+        {categories.map((category) => {
+          const separatorIndex = tools_data[category].indexOf(MAIN_TOOLS_END);
+          const tools = tools_data[category].toSpliced(separatorIndex, 1);
           return (
             <div
-              key={`skills__category-${category}`}
-              className="skills__category">
-              <h3 className="skills__category__headline">
+              key={`tools__category-${category}`}
+              className="tools__category  max-md:w-full max-md:even:justify-start max-md:odd:justify-end">
+              <h3 className="tools__category__headline">
                 {tools_ui.categories[category]}
               </h3>
-              {skills.map((skill, skillIndex) => {
-                const isMain = skillIndex < separatorIndex;
+              {tools.map((tool, toolIndex) => {
+                const isMain = toolIndex < separatorIndex;
                 const showAll = showMore === tools_ui.switch.all;
                 return (
-                  <motion.div
-                    transition={{
-                      type: "tween",
-                      ease: "easeIn",
-                      duration: 0.3,
-                      delay: showAll
-                        ? skillIndex * 0.2 - 0.4
-                        : 1 - skillIndex * 0.2,
-                    }}
-                    animate={{ opacity: isMain || showAll ? 1 : 0 }}
-                    key={`skills__category-${category}__skill-${skill}`}
-                    className={`  skills__category__skill ${isMain ? "skills__category__skill--main" : ""}`}>
-                    {skill}
-                  </motion.div>
+                  <Tool
+                    key={`tool-${tool}`}
+                    isMain={isMain}
+                    isVisible={isMain || showAll}
+                    label={tool}
+                    index={toolIndex}
+                  />
                 );
               })}
             </div>
