@@ -1,11 +1,11 @@
-export const MAIN_SKILLS_END = "MAIN_SKILLS_END";
+export const MAIN_TOOLS_END = "MAIN_TOOLS_END";
 
 export const tools_data = {
   base: [
     "TypeScript",
     "Next.js",
     "React.js",
-    MAIN_SKILLS_END,
+    MAIN_TOOLS_END,
     "JavaScript",
     "PowerBI",
   ],
@@ -13,20 +13,19 @@ export const tools_data = {
     "CSS3",
     "styled-components",
     "Tailwind CSS",
-    MAIN_SKILLS_END,
+    MAIN_TOOLS_END,
     "motion.js",
-    "Material UI",
   ],
   data: [
     "GraphQL",
     "Apollo Client",
     "REST",
-    MAIN_SKILLS_END,
-    "headless (Strapi)",
+    MAIN_TOOLS_END,
+    "Strapi",
     "MongoDB",
     "Power Query",
   ],
-  others: ["Git", "Storybook", "Jest", MAIN_SKILLS_END, "Playwright", "Docker"],
+  others: ["Storybook", "Jest", MAIN_TOOLS_END, "Playwright", "Git", "Docker"],
 };
 
 export const tools_ui_pl = {
