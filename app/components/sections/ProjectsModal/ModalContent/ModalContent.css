@@ -1,0 +1,11 @@
+.modal__content {
+  width: 100%;
+  max-height: calc(100vh - 5rem);
+  background-color: white;
+  overflow: auto;
+  z-index: 1;
+  @media (orientation: landscape) {
+    display: flex;
+    align-items: flex-start;
+  }
+} 
