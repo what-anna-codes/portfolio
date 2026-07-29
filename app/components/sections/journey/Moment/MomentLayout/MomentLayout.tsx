@@ -31,15 +31,12 @@ export const MomentLayout = ({ title, lead, imageUrl, position }: Props) => {
 
     !mLeft && position && setMLeft(marginLeft);
   }, [position]);
-  console.log(
-    "mgfmgfg",
-    `${process.env.NEXT_PUBLIC_BASE_PATH}/img/projects/vertical/${imageUrl}`,
-  );
+
   if (!mLeft) return null;
   return (
     <div className={`${mLeft} flex mb-50 md:mb-35 mr-0 pl-0 ml-3 md:pl-12`}>
       <MomentImage
-        imageUrl={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/projects/horizontal/${imageUrl}`}
+        imageUrl={`/img/projects/horizontal/${imageUrl}`}
       />
       <div className="relative w-auto h-12.5 md:h-25 grow">
         <h3 className="relative h-full pb-2 grow md:grow pl-16  mr-12 md:w-fit md:min-w-[65%] md:max-w-[75%] border-b-2 md:border-b-6 z-50 border-olive-500 flex items-end justify-end text-olive-600 text-right text-pretty text-2xl md:text-3xl font-semibold  ">
