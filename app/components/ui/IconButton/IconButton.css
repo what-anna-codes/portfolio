@@ -1,0 +1,37 @@
+.icon-button {
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.5s;
+  background-color: var(--color-neutral-500);
+  filter: contrast(100%);
+
+  &:hover {
+    opacity: 0.6;
+    background-color: var(--color-neutral-400);
+  }
+
+  &:active {
+    opacity: 0.8;
+    background-color: var(--color-neutral-200);
+  }
+
+  &:disabled {
+    background-color: var(--color-neutral-100);
+    opacity: 0.2;
+    color: #fff;
+    cursor: not-allowed;
+  }
+}
+
+.icon-button img {
+  opacity: 0.6;
+  &:hover {
+    opacity: 0.7;
+  }
+}
