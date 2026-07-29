@@ -43,7 +43,7 @@ const Project = ({ project }: { project: IProject }) => {
               position: stage.index,
               title: stage.title,
               lead: stage.content,
-              picture: `${process.env.PUBLIC_URL ?? ""}/img/icons/numbers/number-${stage.index}.png`,
+              picture: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/icons/numbers/number-${stage.index}.png`,
             }}
             key={`${project.id}-stage-${stage.index}`}
           />

@@ -8,7 +8,7 @@ export function CloseButton({ onClick }: Props) {
   return (
     <IconButton
       classNames="modal__close__icon"
-      src={`${process.env.PUBLIC_URL ?? ""}/img/icons/delete.png`}
+      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/icons/delete.png`}
       onClick={onClick}
     />
   );

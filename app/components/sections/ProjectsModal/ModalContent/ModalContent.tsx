@@ -15,7 +15,7 @@ export function ModalContent({ project }: { project: IProject }) {
       <div className="md:hidden order-1 w-screen">
         <img
           alt={`${project.name} screenshot`}
-          src={`${process.env.PUBLIC_URL ?? ""}/img/projects/horizontal/${project.image}`}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/projects/horizontal/${project.image}`}
           width={16}
           height={9}
           className="w-screen h-auto object-cover"
@@ -26,12 +26,12 @@ export function ModalContent({ project }: { project: IProject }) {
         style={{ height: "calc(100vh - 6rem)" }}>
         <img
           alt={`${project.name} screenshot`}
-          src={`${process.env.PUBLIC_URL ?? ""}/img/projects/vertical/${project.image}`}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/projects/vertical/${project.image}`}
           className="w-auto object-right h-full max-h-full opacity-0  object-cover"
         />
         <img
           alt={`${project.name} screenshot`}
-          src={`${process.env.PUBLIC_URL ?? ""}/img/projects/vertical/${project.image}`}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/projects/vertical/${project.image}`}
           className="w-auto object-right h-full max-h-full fixed object-cover"
         />
       </div>

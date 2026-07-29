@@ -8,7 +8,7 @@ interface Props {
 export function NextButton({ disabled = false, onClick }: Props) {
   return (
     <IconButton
-      src={`${process.env.PUBLIC_URL ?? ""}/img/icons/next.png`}
+      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/icons/next.png`}
       onClick={onClick}
       disabled={disabled}
     />

@@ -9,7 +9,7 @@ export const Card = ({ data }: any) => {
         style={{ transition: "all 0.8s" }}
         className="rounded-full absolute z-10 left-0  brightness-75 hover:brightness-100 bg-stone-400 border-white   border outline-3  shadow-md hover:shadow-xl overflow-hidden w-25 md:w-30 h-auto aspect-square     outline-stone-200 hover:text-stone-600/90">
         <img
-          src={`${process.env.PUBLIC_URL ?? ""}/img/icons/numbers/number-${position}.png`}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/img/icons/numbers/number-${position}.png`}
           alt={picture}
           className=" h-full aspect-video w-auto object-cover object-center scale-110 duration-1000"
         />
