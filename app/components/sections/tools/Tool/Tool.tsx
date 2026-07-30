@@ -5,6 +5,7 @@ interface Props {
   isMain?: boolean;
   label: string;
   index?: number;
+  classNames?: string;
 }
 
 export const Tool = ({
@@ -12,6 +13,7 @@ export const Tool = ({
   isMain = true,
   label,
   index = 0,
+  classNames = ''
 }: Props) => (
   <motion.div
     layout
@@ -34,7 +36,8 @@ export const Tool = ({
     key={`tool-${label}`}
     className={`p-2 px-4 grid place-items-center rounded-lg shadow-lg text-center break-word
                     ${isVisible ? "h-12 min-h-fit mb-4" : "h-0 m-0"}
-                    ${isMain ? "bg-mauve-500 text-mauve-200/80 font-normal" : "bg-mauve-200/80 text-mauve-500 font-light"}`}>
+                    ${isMain ? "bg-mauve-500 text-mauve-200/80 font-normal" : "bg-mauve-200/80 text-mauve-500 font-light"}
+                    ${classNames}`}>
     {label}
   </motion.div>
 );
