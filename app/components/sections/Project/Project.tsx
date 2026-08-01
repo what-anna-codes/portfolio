@@ -1,33 +1,20 @@
 import { IProject } from "@/app/data/projects-en";
 import "./Project.css";
 import { ProjectSection } from "./ProjectSection/ProjectSection";
-import { Card } from "./Moment/Card";
+import { Card } from "../journey/Moment/Moment";
 import { Tool } from "../tools/Tool/Tool";
+import ProjectHeader from "./ProjectHeader/ProjectHeader";
 
 const Project = ({ project }: { project: IProject }) => {
-  const { id, name, role, description, sections, stack } = project;
+  const { id, sections, stack } = project;
   return (
-    <article className="project flex grow-0! shrink w-fit order-2" id={id}>
-      <h2 className="text-5xl! p-16 mt-2 pl-0">{name}</h2>
+    <article className="project flex flex-col w-full order-2" id={id}>
+      <ProjectHeader project={project} />
       <div className="project__tools md:max-w-[80%] lg:max-w-[60%]">
         {stack.map((tool) => (
           <Tool label={tool} key={`project__tool-${tool}`} isMain={false} />
         ))}
       </div>
-      {description && (
-        <div className="flex flex-col gap-4 w-full mt-8 p-2 py-6 border-y border-mauve-200 bg-mauve-100/80 text-mauve-600">
-          <p>
-            <span className="font-semibold">The project: </span>
-            {description}{" "}
-          </p>
-          {role && (
-            <p>
-              <span className="font-semibold">My role: </span>
-              {role}
-            </p>
-          )}
-        </div>
-      )}
       {project?.stages && (
         <h4 className="text-mauve-500 font-light mt-10 mb-4 text-3xl!">
           process stages
@@ -49,7 +36,7 @@ const Project = ({ project }: { project: IProject }) => {
           />
         ))}
 
-      {sections.map((s) => (
+      {sections?.map((s) => (
         <ProjectSection
           key={`${id}-${s.title}`}
           heading={s.title}
