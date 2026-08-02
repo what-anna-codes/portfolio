@@ -1,4 +1,13 @@
- .project-section ul {
+@import "tailwindcss";
+
+.project-section__heading {
+  @apply text-mauve-500 font-normal p-4 mt-8 text-3xl!;
+}
+
+.project-section__content {
+  @apply font-sans max-w-full mt-2 p-4 pr-8 py-3 border-y border-mauve-200 text-mauve-600;
+}
+.project-section__content ul {
   list-style: outside;
   margin-block-start: 1em;
   margin-block-end: 1em;
@@ -7,7 +16,7 @@
   margin: 0;
 }
 
-.project-section li {
+.project-section__content li {
   margin-top: 0.1rem;
   margin-bottom: 0.1rem;
 }

@@ -4,11 +4,11 @@ const ProjectHeader = ({ project }: { project: IProject }) => {
   const { name, description } = project;
 
   return (
-    <div className="w-full my-4 lg:my-12 flex flex-col gap-4 text-center">
-      <h2 className="w-full text-4xl md:text-6xl leading-none">
+    <div className="w-full my-12 py-0 flex flex-col gap-1 text-left">
+      <h2 className="w-fit max-w-[70%] text-center mx-auto border-b-2 pb-4 text-4xl md:text-5xl leading-none">
         {name}
       </h2>
-      <p className="w-[80%] mx-auto p-4 md:px-[10%] lg:px-12 border-t border-mauve-300 text-mauve-600">
+      <p className="w-[80%] mx-auto py-4  text-center text-pretty   border-0 border-mauve-300 text-mauve-600">
         {description}
       </p>
     </div>
