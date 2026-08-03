@@ -10,21 +10,21 @@ export const ProjectStage = ({ data }: { data: IProjectStage }) => {
         {iconPath && (
           <div
             style={{ transition: "all 0.8s" }}
-            className="w-16 lg:w-24 h-auto -translate-x-10 flex justify-start aspect-square rounded-full border-3 border-white outline-3 outline-mauve-400 shadow-md">
+            className="w-16 lg:w-24 h-auto -translate-x-10 flex justify-start aspect-square rounded-full border-4 border-mauve-50 outline-1 outline-mauve-400 shadow-md">
             <img
               src={iconPath}
               alt={title}
-              className="w-full h-auto aspect-square object-cover object-center"
+              className="w-full h-auto aspect-square object-cover object-center hue-rotate-60 opacity-80"
             />
           </div>
         )}
-        <h3 className="max-w-full flex justify-start mr-4 text-xl md:text-3xl text-stone-800 uppercase tracking-wide">
+        <h4 className="max-w-full flex justify-start mr-4 text-xl uppercase font-bold tracking-wide">
           {title}
-        </h3>
+        </h4>
       </div>
 
       <TextBlock
-        classNames="max-w-full h-fit ml-12 lg:pr-4 justify-start text-justify-safe text-stone-600 leading-normal"
+        classNames="max-w-full h-fit ml-4 lg:ml-12 lg:pr-4 justify-start text-justify-safe text-stone-600 leading-normal"
         content={content}
       />
     </div>

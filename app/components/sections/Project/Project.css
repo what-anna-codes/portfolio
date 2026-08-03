@@ -14,3 +14,18 @@
     margin: -0.25rem !important;
   }
 }
+
+.project ul,
+.project ol {
+  list-style: outside;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  padding-inline-start: 36px;
+  padding-top: 0;
+  margin: 0;
+}
+
+.project li {
+  margin-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}

@@ -3,6 +3,13 @@ export interface IProjectSection {
   content: string
 }
 
+export interface IProjectStage {
+  id: string;
+  title: string;
+  content: string;
+  iconPath?: string;
+}
+
 export interface IProject {
   id: string
   name: string
@@ -14,14 +21,15 @@ export interface IProject {
   type: "play" | "work"
   code?: string
   demo?: string
+  context?: string
   sections: Array<IProjectSection>
-  stages?: Array<{ index: number; title: string; content: string }>;
+  stages?: Array<IProjectStage>;
 }
 
 export const projects_en: IProject[] = [
   {
     id: "project-001",
-    name: "SET",
+    name: "pattern hunt",
     description: "A browser-based version of the SET card game.",
     stack: [
       "Typescript",
@@ -49,7 +57,7 @@ export const projects_en: IProject[] = [
   },
   {
     id: "project-002",
-    name: "autoresponder",
+    name: "responder module",
     stack: [
       "(ASP.NET Core) Blazor",
       "MongoDB"
@@ -58,17 +66,14 @@ export const projects_en: IProject[] = [
     type: "work",
     description: "A module for automated and standardized email correspondence handling.",
     role: "Workflow design followed by front-end implementation in a Blazor (ASP.NET) app.",
-    sections: [
-      {
-        title: "business context",
-        content: `
-    The high volume of routinely handled messages created two main challenges:
+    context: `
+    <div>The high volume of routinely handled messages created two main challenges:
     <ul>
       <li><strong>time-consuming workflows</strong> - responding to messages required significant time;</li>
       <li><strong>inconsistent communication</strong> - responses depended on individual employee decisions.</li>
-    </ul>
-    `
-      },
+    </ul></div>
+    `, sections: [
+
       {
         title: "solutions",
         content: `
@@ -86,7 +91,7 @@ export const projects_en: IProject[] = [
   },
   {
     id: "project-007",
-    name: "Automated reporting with PowerBI",
+    name: "inspection reports with PowerBI",
     role: "report design, data modelling & visualization in PowerBI & support in the development of the underlying system - an integrated workflow automation solution",
     description: "Automatically generated PowerBI reports sourced from Sharepoint data",
     sections: [
@@ -96,22 +101,23 @@ export const projects_en: IProject[] = [
       }],
     stages: [
       {
-        index: 1,
+        id: 'project-007-en-stage-1',
         title: 'data fetching',
         content: "fetch source data (apartment handover inspection checklists) from online SharePoint Lists to ensure every report is based on latest data",
+
       },
       {
-        index: 2,
+        id: 'project-007-en-stage-2',
         title: 'raport design',
         content: "distribute planned content across report pages page views basing on the sources and reference materials provided by the client"
       },
       {
-        index: 3,
+        id: 'project-007-en-stage-3',
         title: 'data modelling',
         content: "integrate and transform data from two separate sources (covering handover inspections and construction flaws) to develop a coherent semantic data model allowing easy access to all information relating to any single unit",
       },
       {
-        index: 4,
+        id: 'project-007-en-stage-4',
         title: 'visualization',
         content: "build a standardized PowerBI report template for instant generation of handover documentation for over a hundred of newly completed properties."
       }
@@ -128,7 +134,7 @@ export const projects_en: IProject[] = [
   },
   {
     id: "project-003",
-    name: "a professional food & dining blog",
+    name: "corporate food blog",
     description: "A blogging service for Restaurant Club, the organizer of Europe's largest dining festivals.",
     role: "frontend development, CMS config & administration, coordination between IT and the content team",
 
@@ -142,12 +148,13 @@ export const projects_en: IProject[] = [
       "Storybook"
     ],
     stages: [{
-      index: 1,
+      id: 'project-003-en-stage-1',
       title: 'PLANNING',
       content: "Cross-department talks to clarify the project's vision, scope & schedule. Our success: an accepted set of user stories outlining our long list of feature ideas - grouped by priority and ready for updates in Jira."
     },
     {
-      index: 2,
+      id: 'project-003-en-stage-2',
+
       title: 'DATA & CMS',
       content: `<div><ol>
 <li>organization of planned contents into Strapi CMS data models to generate a structured GraphQL schema,</li>
@@ -157,7 +164,8 @@ export const projects_en: IProject[] = [
 </ol></div>`,
     },
     {
-      index: 3,
+      id: 'project-003-en-stage-3',
+
       title: "frontend",
       content: `<p>Development on the client side on the basis of the provided layout design in Figma.</p>
     <p>Main challenge: writing CSS rules for the rich-text editor content and ensure a fully consistent layout.</p>
@@ -165,7 +173,8 @@ export const projects_en: IProject[] = [
 `
     },
     {
-      index: 4,
+      id: 'project-003-en-stage-4',
+
       title: "support",
       content: `My last tasks after deployment involved mostly training the content team to use Strapi CMS and addressing their questions as ongoing support. `
     }
@@ -181,7 +190,7 @@ export const projects_en: IProject[] = [
   },
   {
     id: "project-004",
-    name: "A ticket booking platform",
+    name: "ticket booking platform",
     description: "The official website of Restaurant Club, a Polish company organizing Europe's largest dining festivals.",
     role: "Despite my lack of experience (the platform was my first real commercial project), the team gave me a chance to build entire views and complete modules. Example: the user panel.",
     image: "user_panel.png",
@@ -197,15 +206,15 @@ export const projects_en: IProject[] = [
     type: "work",
     sections: [
       {
-        title: "scope",
+        title: "user panel: scope",
         content: `The design included four responsive pages sharing the same layout and navigation: order history, user favourites, account details & payment methods. As the site grew with time, we also added a separate page for marketing consent management.`
       },
       {
-        title: 'main tasks',
+        title: 'user panel: main tasks',
         content: `<ul>
       <li><strong>pixel-perfect implementation of a Figma design</strong> in a TypeScript + Next.js app. My favourite element: a beautifully proportionate payment card.</li>
-      <li><strong>robust forms</strong> combining Formik logic, front-end validation with Yup & backend error handling - in a multilingual application.</li>
-      <li>integration with an <strong>external payments service</strong> for the purposes of credit card management.</li>
+      <li><strong>robust forms</strong> combining Formik logic, front-end validation with Yup & backend error handling - all within <strong>a multilingual application</strong>.</li>
+      <li><strong>external payments service integration</strong> necessary for payment card verification transactions (temporary test charges), triggered when user tries to add the card to their payment options.</li>
       <li><strong>component documentation in Storybook</strong></li>.
     </ul>`
       }],

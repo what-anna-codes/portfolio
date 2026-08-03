@@ -1,22 +1,13 @@
 @import "tailwindcss";
 
+.project-section {
+  @apply py-8 border-b border-mauve-400;
+}
+
 .project-section__heading {
-  @apply text-mauve-500 font-normal p-4 mt-8 text-3xl!;
+  @apply text-mauve-500 font-normal p-4 text-3xl!;
 }
 
 .project-section__content {
-  @apply font-sans max-w-full mt-2 p-4 pr-8 py-3 border-y border-mauve-200 text-mauve-600;
-}
-.project-section__content ul {
-  list-style: outside;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  padding-inline-start: 36px;
-  padding-top: 0;
-  margin: 0;
-}
-
-.project-section__content li {
-  margin-top: 0.1rem;
-  margin-bottom: 0.1rem;
+  @apply font-sans max-w-full mt-2 p-4 pr-8 text-mauve-600;
 }

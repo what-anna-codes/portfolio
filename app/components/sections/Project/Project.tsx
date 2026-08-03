@@ -16,12 +16,12 @@ const Project = ({ project }: { project: IProject }) => {
 
   return (
     <article
-      className="project lg:p-8 md:min-w-[40vw] lg:shadow-xl z-2  flex flex-col order-2"
+      className="project max-w-full z-2 lg:p-8 pb-16! flex grow flex-col order-2 bg-mauve-200/60 lg:shadow-lg"
       id={id}>
-      <ProjectHeader project={project} />
-      {context ||
-        (role && (
-          <div className="shadow-md p-4 bg-mauve-100 rounded-lg">
+      <div className="max-w-200 mx-auto my-0 bg-transparent">
+        <ProjectHeader project={project} />
+        {(context || role) && (
+          <div className="shadow-md mb-8 p-4 w-7/10 mx-auto bg-mauve-50/60 rounded-lg">
             {role && (
               <ProjectShortSection heading={subheadings.role} content={role} />
             )}
@@ -32,39 +32,42 @@ const Project = ({ project }: { project: IProject }) => {
               />
             )}
           </div>
-        ))}
+        )}
 
-      <h4 className="project-section__heading">{subheadings.tools}</h4>
-      <div className="project-section__content project__tools md:max-w-[80%] lg:max-w-[60%]">
-        {stack.map((tool) => (
-          <Tool label={tool} key={`project__tool-${tool}`} isMain />
-        ))}
-      </div>
-
-      {stages && (
-        <h4 className="project-section__heading">{subheadings.stages}</h4>
-      )}
-      {stages && (
-        <div className="project-section__content max-w-full  lg:max-w-[80%] flex flex-col columns-2 gap-4">
-          {stages.map((stage, i) => (
-            <ProjectStage
-              key={stage.id}
-              data={{
-                ...stage,
-                iconPath: `/img/icons/numbers/number-${i + 1}.png`,
-              }}
-            />
+        <h2 className="project-section__heading">{subheadings.tools}</h2>
+        <div className="project-section__content project__tools md:max-w-[80%] lg:max-w-[60%]">
+          {stack.map((tool) => (
+            <Tool label={tool} key={`project__tool-${tool}`} isMain />
           ))}
         </div>
-      )}
 
-      {sections?.map(({ title, content }) => (
-        <ProjectSection
-          key={`${id}-${title}`}
-          heading={title}
-          content={content}
-        />
-      ))}
+        {stages && (
+          <h2 className="project-section__heading mt-4">
+            {subheadings.stages}
+          </h2>
+        )}
+        {stages && (
+          <div className="project-section__content max-w-full lg:max-w-4/5 pb-8! border-b border-mauve-400 flex flex-col gap-0">
+            {stages.map((stage, i) => (
+              <ProjectStage
+                key={stage.id}
+                data={{
+                  ...stage,
+                  iconPath: `/img/icons/numbers/number-${i + 1}.png`,
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {sections?.map(({ title, content }) => (
+          <ProjectSection
+            key={`${id}-${title}`}
+            heading={title}
+            content={content}
+          />
+        ))}
+      </div>
     </article>
   );
 };
