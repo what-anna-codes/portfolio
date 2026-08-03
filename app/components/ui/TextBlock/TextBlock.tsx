@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export const TextBlock = ({
   content,
   classNames,
@@ -9,7 +7,7 @@ export const TextBlock = ({
 }) => {
   return (
     <div
-      className={`text-pretty ${classNames} pl-12`}
+      className={`text-pretty pl-12 ${classNames}`}
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );
