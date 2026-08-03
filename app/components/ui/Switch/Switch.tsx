@@ -9,6 +9,7 @@ interface Props {
   select: (par: any) => void;
   selected: O;
   classNames?: string;
+  id?: string;
   type?: SwitchType;
 }
 
@@ -17,6 +18,7 @@ export default function Switch({
   select,
   options,
   type = "button",
+  id,
   classNames,
 }: Props) {
   const [index, setIndex] = useState(0);
@@ -24,8 +26,10 @@ export default function Switch({
     const newIndex = options.indexOf(selected);
     newIndex !== index && newIndex >= 0 && setIndex(newIndex);
   }, [selected, options, index]);
+
   return (
     <motion.div
+      id={id}
       className={`btn-frame ${classNames ?? ""}`}
       transition={{ duration: 0.4 }}>
       <motion.div
@@ -41,7 +45,6 @@ export default function Switch({
           key={opt}
           type="button"
           onClick={() => select(opt)}
-          disabled={selected === opt}
           className={`btn-frame__btn cursor-pointer ${selected === opt ? "btn-frame__btn--selected" : ""} ${type === "link" ? "p-0" : ""}`}>
           {type === "link" ? (
             <a className="switch-link" href={`#${opt}`}>

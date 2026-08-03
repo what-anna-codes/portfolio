@@ -1,4 +1,3 @@
- 
 import { useLanguage } from "@/app/context/LanguageContext";
 import Switch from "../Switch/Switch";
 import "./LanguageSwitch.css";
@@ -8,7 +7,12 @@ export default function LanguageSwitch() {
 
   return (
     <div className="language-switch">
-      <Switch options={["en", "pl"]} selected={language} select={setLanguage} />
+      <Switch
+        id="language-switch"
+        options={["en", "pl"]}
+        selected={language}
+        select={setLanguage}
+      />
     </div>
   );
 }

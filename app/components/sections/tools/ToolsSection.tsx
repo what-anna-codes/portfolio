@@ -16,7 +16,7 @@ export const ToolsSection = () => {
   const { language } = useLanguage();
   const isEnglish = language === "en";
   const tools_ui = isEnglish ? tools_ui_en : tools_ui_pl;
-  const [showMore, setShowMore] = useState(tools_ui.switch.main);
+  const [showMore, setShowMore] = useState(false);
   const categories = Object.keys(tools_data) as (keyof typeof tools_data)[];
   if (!categories.length) return null;
 
@@ -28,10 +28,11 @@ export const ToolsSection = () => {
       />
       <div className="tools__switch">
         <Switch
+          id="tools-switch"
           classNames="btn-frame-long max-w-fit"
-          selected={showMore}
+          selected={showMore ? tools_ui.switch.all : tools_ui.switch.main}
           options={Object.values(tools_ui.switch)}
-          select={setShowMore}
+          select={() => setShowMore(!showMore)}
         />
       </div>
       <div className="tools__categories h-fit min-h-0 w-fit flex justify-center">
@@ -47,7 +48,7 @@ export const ToolsSection = () => {
               </h3>
               {tools.map((tool, toolIndex) => {
                 const isMain = toolIndex < separatorIndex;
-                const showAll = showMore === tools_ui.switch.all;
+                const showAll = showMore;
                 return (
                   <Tool
                     key={`tool-${tool}`}
