@@ -7,8 +7,7 @@ interface Props {
 export function CloseButton({ onClick }: Props) {
   return (
     <IconButton
-      classNames="modal__close__icon"
-      src={'/img/icons/delete.png'}
+      src={'/img/icons/close.png'}
       onClick={onClick}
     />
   );

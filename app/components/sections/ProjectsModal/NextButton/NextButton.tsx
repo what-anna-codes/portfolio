@@ -8,9 +8,10 @@ interface Props {
 export function NextButton({ disabled = false, onClick }: Props) {
   return (
     <IconButton
-      src={`/img/icons/next.png`}
+      src={`/img/icons/previous.png`}
       onClick={onClick}
       disabled={disabled}
+      classNames="rotate-180"
     />
   );
 }

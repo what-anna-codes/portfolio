@@ -9,7 +9,7 @@ export function PrevButton({ disabled = false, onClick }: Props) {
   return (
     <IconButton
       classNames="button__prev"
-      src={`/img/icons/prev.png`}
+      src={`/img/icons/previous.png`}
       onClick={onClick}
       disabled={disabled}
     />

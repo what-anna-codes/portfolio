@@ -35,13 +35,11 @@ export const MomentLayout = ({ title, lead, imageUrl, position }: Props) => {
   if (!mLeft) return null;
   return (
     <div className={`${mLeft} flex mb-50 md:mb-35 mr-0 pl-0 ml-3 md:pl-12`}>
-      <MomentImage
-        imageUrl={`/img/projects/horizontal/${imageUrl}`}
-      />
+      <MomentImage imageUrl={imageUrl} />
       <div className="relative w-auto h-12.5 md:h-25 grow">
         <h3 className="relative h-full pb-2 grow md:grow pl-16  mr-12 md:w-fit md:min-w-[65%] md:max-w-[75%] border-b-2 md:border-b-6 z-50 border-olive-500 flex items-end justify-end text-olive-600 text-right text-pretty text-2xl md:text-3xl font-semibold  ">
           {title}
-          <div className="moment-lead absolute drop-shadow-2xl w-full text-pretty   top-full h-fit  md:max-h-[200%]   pb-2 overflow-hidden pl-4 md:pl-8 pt-3 font-sans font-normal text-[17px] md:text-lg tracking-tighter md:tracking-tight">
+          <div className="moment-lead absolute drop-shadow-2xl w-full text-pretty   top-full h-fit  md:max-h-[200%]   pb-2 overflow-hidden pl-4 md:pl-8 pt-3 font-sans font-normal xl:text-lg">
             {lead}
           </div>
         </h3>

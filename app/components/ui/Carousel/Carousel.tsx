@@ -10,9 +10,10 @@ interface Props {
   children: ReactNode;
   items: CarouselItem[];
   activeId?: string;
+  classNames?: string;
 }
 
-export function Carousel({ items, children, activeId }: Props) {
+export function Carousel({ items, children, activeId, classNames }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
 
   const [prevButtonDisabled, setPrevButtonDisabled] = useState(false);
@@ -40,13 +41,15 @@ export function Carousel({ items, children, activeId }: Props) {
   }, [activeId, emblaApi, items]);
 
   return (
-    <div className="embla">
+    <div className={`embla ${classNames}`}>
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">{children}</div>
       </div>
-      <div className="embla__buttons">
-        <PrevButton onClick={goToPrev} disabled={prevButtonDisabled} />
-        <NextButton onClick={goToNext} disabled={nextButtonDisabled} />
+      <div className="embla__buttons z-200 fixed w-full">
+        <div className="embla__buttons__bg max-w-fit max-h-16 z-200 p-px flex justify-between items-center gap-6 pointer-events-none rounded-full">
+          <PrevButton onClick={goToPrev} disabled={prevButtonDisabled} />
+          <NextButton onClick={goToNext} disabled={nextButtonDisabled} />
+        </div>
       </div>
     </div>
   );
