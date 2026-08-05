@@ -1,11 +1,15 @@
+@import "tailwindcss";
+
 .modal__content {
-  width: 100%;
-  max-height: calc(100vh - 5rem);
-  background-color: white;
-  overflow: auto;
-  z-index: 1;
-  @media (orientation: landscape) {
-    display: flex;
-    align-items: flex-start;
+  @apply max-w-full h-screen overflow-auto flex flex-col justify-start bg-mauve-50;
+  @media (min-width: 64rem) {
+    @apply w-full flex flex-row justify-between;
+    & .project {
+      display: flex;
+      flex-grow: 2;
+      min-width: auto;
+      max-width: 100%;
+      min-height: fit-content;
+    }
   }
-} 
+}

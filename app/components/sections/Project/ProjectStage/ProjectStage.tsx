@@ -24,7 +24,7 @@ export const ProjectStage = ({ data }: { data: IProjectStage }) => {
       </div>
 
       <TextBlock
-        classNames="max-w-full h-fit ml-4 lg:ml-12 lg:pr-4 justify-start text-justify-safe text-stone-600 leading-normal"
+        classNames="max-w-full h-fit ml-4 lg:ml-12 lg:pr-4 justify-start text-lg text-justify-safe text-stone-600 leading-6"
         content={content}
       />
     </div>

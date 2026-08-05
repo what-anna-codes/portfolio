@@ -16,7 +16,7 @@ const Project = ({ project }: { project: IProject }) => {
 
   return (
     <article
-      className="project max-w-full z-2 lg:p-8 pb-16! flex grow flex-col order-2 bg-mauve-200/60 lg:shadow-lg"
+      className="project max-w-full z-2 lg:p-8 pb-16! flex grow flex-col order-2 bg-mauve-100/60 lg:shadow-lg"
       id={id}>
       <div className="max-w-200 mx-auto my-0 bg-transparent">
         <ProjectHeader project={project} />

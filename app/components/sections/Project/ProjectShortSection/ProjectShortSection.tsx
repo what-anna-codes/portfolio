@@ -8,9 +8,9 @@ interface Props {
 export const ProjectShortSection = ({ heading, content }: Props) => {
   return (
     <>
-      <strong className="uppercase font-bold tracking-wide">{heading}</strong>
+      <strong className="uppercase font-bold text-md leading-7 tracking-wide">{heading}</strong>
       <TextBlock
-        classNames="p-2 pl-0! text-justify-safe text-mauve-600"
+        classNames="p-2 pl-0! text-justify-safe leading-5 text-mauve-600"
         content={content}
       />
     </>

@@ -14,7 +14,7 @@ export const AboutSection = () => {
     <Section
       id="about"
       bg="bg-mauve-200/50"
-      classNames="p-12 md:p-24 text-[17px] text-pretty font-sans flex flex-col items-center w-screen max-w-screen">
+      classNames="p-12 md:p-24 text-md text-justify-safe text-pretty flex flex-col items-center w-screen max-w-screen">
       <SectionHeader
         classNames="text-center p-0 m-0 pb-12 w-full"
         content={title}

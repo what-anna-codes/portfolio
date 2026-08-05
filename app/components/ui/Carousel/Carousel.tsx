@@ -45,7 +45,7 @@ export function Carousel({ items, children, activeId, classNames }: Props) {
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">{children}</div>
       </div>
-      <div className="embla__buttons z-200 fixed w-full">
+      <div className="embla__buttons z-200 fixed w-full bottom-2">
         <div className="embla__buttons__bg max-w-fit max-h-16 z-200 p-px flex justify-between items-center gap-6 pointer-events-none rounded-full">
           <PrevButton onClick={goToPrev} disabled={prevButtonDisabled} />
           <NextButton onClick={goToNext} disabled={nextButtonDisabled} />

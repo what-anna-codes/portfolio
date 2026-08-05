@@ -15,7 +15,7 @@ export function ProjectsModal({ projects, activeId, close }: Props) {
   useLockBodyScroll();
 
   return (
-    <Carousel classNames="projects-modal" items={projects as unknown as CarouselItem[]} activeId={activeId}>
+    <Carousel items={projects as unknown as CarouselItem[]} activeId={activeId}>
       {projects.map((project) => (
         <div key={project.id} className="embla__slide">
           <ModalContent project={project} />

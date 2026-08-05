@@ -5,9 +5,10 @@
 }
 
 .project-section__heading {
-  @apply text-mauve-500 font-normal p-4 text-3xl!;
+  @apply text-mauve-500 font-bold font-sans uppercase p-4 text-2xl!;
 }
 
 .project-section__content {
-  @apply font-sans max-w-full mt-2 p-4 pr-8 text-mauve-600;
+  line-height: 1;
+  @apply font-sans max-w-full mt-2 p-4 pr-8 text-lg text-mauve-600;
 }

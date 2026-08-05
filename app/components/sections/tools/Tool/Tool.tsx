@@ -34,7 +34,7 @@ export const Tool = ({
       height: isVisible ? "3rem" : 1,
     }}
     key={`tool-${label}`}
-    className={`p-2 px-4 grid place-items-center rounded-lg shadow-lg text-center break-word
+    className={`p-2 px-4 grid place-items-center rounded-lg shadow-lg text-center text-md tracking-wide break-word
                     ${isVisible ? "h-12 min-h-fit mb-4" : "h-0 m-0"}
                     ${isMain ? "bg-mauve-500 text-mauve-200/80 font-normal" : "bg-mauve-200/80 text-mauve-500 font-light"}
                     ${classNames}`}>

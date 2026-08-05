@@ -2,21 +2,20 @@ import { IProject } from "@/app/data/projects-en";
 import Project from "../../Project/Project";
 import "./ModalContent.css";
 export function ModalContent({ project }: { project: IProject }) {
-
   return (
-    <div className="w-screen modal__content flex flex-col md:flex-row relative md:justify-between bg-mauve-50!">
-      <div className="md:hidden order-1 w-screen">
+    <div className="modal__content">
+      <div className="order-1 w-screen max-w-full lg:w-0">
         <img
           alt={`${project.name} screenshot`}
           src={`/img/projects/horizontal/${project.image}`}
           width={16}
           height={9}
-          className="w-screen h-auto object-cover"
+          className="lg:hidden w-full lg:w-0 h-auto aspect-video object-cover"
         />
       </div>
       <div
-        className="hidden md:flex h-full min-w-fit justify-end relative order-3 m-0"
-        style={{ height: "calc(100vh - 6rem)" }}>
+        className="hidden lg:flex h-full min-w-fit justify-end relative order-3 m-0"
+        style={{ height: "100vh" }}>
         <img
           alt={`${project.name} screenshot`}
           src={`/img/projects/vertical/${project.image}`}
