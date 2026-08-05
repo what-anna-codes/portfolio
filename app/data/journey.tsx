@@ -73,7 +73,6 @@ export const journey_pl = {
       date: "czerwiec 2026",
       title: "własne portfolio",
       lead: "Podsumowanie dotychczasowej pracy i krótkie wprowadzenie do głównych projektów.",
-
     },
     {
       ...journey_global.moments[1],
@@ -122,7 +121,7 @@ export const journey_pl = {
       date: "lipiec 2023",
       lead: "Na początku wydawało mi się, że frontend to przede wszystkim estetyka i precyzyjne odwzorowanie projektu. Szybko przekonałam się, że prawdziwym wyzwaniem jest przewidywanie tego, jak użytkownik spróbuje interfejs... zepsuć.",
       title: "dołączenie do zespołu RC",
-    }
+    },
   ],
 };
 
@@ -165,7 +164,7 @@ export const journey_en = {
       title: "Not A Junior Anymore",
       lead: "What really separates a mid-level developer from a junior? As I discovered, it's less about experience and more about learning to anticipate change before it happens.",
     },
-     {
+    {
       ...journey_global.moments[6],
       date: "2023",
       title: "Smaller Project, Bigger Role",
