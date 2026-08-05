@@ -22,15 +22,13 @@ export const JourneySection = () => {
   return (
     <Section id="journey" bg="bg-mauve-200/40 relative">
       <SectionHeader
-        classNames="text-6xl! text-right pr-12 mb-40"
+        classNames="text-center mb-40"
         content={journey_data.title}
       />
       <div className="moments w-full pl-0 lg:pl-6">
         {journey_data.moments.map((moment) => (
           <Moment
-            onClick={
-              moment?.projectId && (() => setCurrentProjectId(moment.projectId))
-            }
+            onClick={() => setCurrentProjectId(moment?.projectId || "ajajaj")}
             data={moment}
             key={`moment-${moment.id}`}
           />

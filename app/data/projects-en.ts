@@ -65,7 +65,7 @@ export const projects_en: IProject[] = [
     image: "responder.png",
     type: "work",
     description: "A module for automated and standardized email correspondence handling.",
-    role: "Workflow design followed by front-end implementation in a Blazor (ASP.NET) app.",
+    role: "email response workflow design followed by front-end implementation in a Blazor (ASP.NET) app.",
     context: `
     <div>The high volume of routinely handled messages created two main challenges:
     <ul>
