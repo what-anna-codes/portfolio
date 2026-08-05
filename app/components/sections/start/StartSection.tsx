@@ -26,7 +26,7 @@ export const StartSection = () => {
           classNames="m-0 p-4 pb-8 max-sm:text-center max-sm:align-center max-sm:pl-4 pl-12 lg:pb-12 lg:text-5xl xl:text-6xl"
         />
         <TextBlock
-          classNames="w-full bg-transparent z-2 max-sm:text-center max-sm:pl-0 md:text-lg lg:text-xl"
+          classNames="w-full leading-12 bg-transparent z-2 max-sm:text-center max-sm:pl-0 md:text-lg lg:text-xl"
           content={isEnglish ? start_en.description : start_pl.description}
         />
         <LinkPanel />
