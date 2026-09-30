@@ -11,6 +11,10 @@ const ProjectHeader = ({ project }: { project: IProject }) => {
       <p className="w-[80%] mx-auto py-4 text-center text-pretty border-0 border-mauve-300 text-lg text-mauve-600">
         {description}
       </p>
+     {(project?.code && project?.demo) && <div className="w-full flex justify-center gap-4 font-extrabold text-mauve-600">
+        <a className="hover:text-mauve-800" href={project.code} target="_blank">CODE</a>
+        <a className="hover:text-mauve-800" href={project.demo} target="_blank">DEMO</a>
+      </div>}
     </div>
   );
 };

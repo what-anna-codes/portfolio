@@ -40,8 +40,8 @@ export const projects_en: IProject[] = [
     ],
     image: "set.png",
     type: "play",
-    code: "https://github.com/what-anna-codes/set-online",
-    demo: "https://what-anna-codes.github.io/set-online/",
+    code: "https://github.com/what-anna-codes/pattern-hunt",
+    demo: "https://pattern-hunt.vercel.app/",
     sections: [
       {
         title: "main features",
