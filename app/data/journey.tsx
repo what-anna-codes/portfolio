@@ -161,7 +161,7 @@ export const journey_en = {
     {
       ...journey_global.moments[5],
       date: "January 2025",
-      title: "Not A Junior Anymore",
+      title: "Promotion to Mid",
       lead: "What really separates a mid-level developer from a junior? As I discovered, it's less about experience and more about learning to anticipate change before it happens.",
     },
     {
